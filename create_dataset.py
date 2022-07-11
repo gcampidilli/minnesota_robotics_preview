@@ -46,13 +46,6 @@ class CustomImageDataset(Dataset):
     
 
 
-"""
-ewm_annot = '/home/campi120/ewm_vae/ewm_annotations.csv'
-ewm_img_dir = '/home/campi120/ewm_vae/ewm_imgs'
-ewm_dat = CustomImageDataset(ewm_annot,ewm_img_dir)
-"""
-
-
                                                 
 
 
