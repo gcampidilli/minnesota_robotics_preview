@@ -197,14 +197,4 @@ save_image(generated_images.view(batch_size, 3, 32, 32), 'generated_sample.png')
 #save_image(generated_images.view(batch_size, 3, 64, 64), 'generated_sample.png')
 
 
-"""
-Figure out error:
-../aten/src/ATen/native/cuda/Loss.cu:115: operator(): block: [78,0,0], thread: [32,0,0] Assertion `input_val >= zero && input_val <= one` failed
-
-# this subset is known to trigger above error
-ewm_subset = ewm_dat.img_labels.iloc[[551, 587, 128, 487, 0, 118, 708, 140, 74, 886]]
-
-Fixed by replacing BCELoss with BCEWithLogitsLoss & removing sigmoid layer for x_hat
-"""
-
 
