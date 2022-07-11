@@ -49,17 +49,16 @@ epochs = 15
 import torchvision.transforms as transforms
 from torch.utils.data import DataLoader
 
-ewm_annot = '/home/campi120/ewm_vae/ewm_annotations.csv'
-ewm_img_dir = '/home/campi120/ewm_vae/ewm_imgs'
-ewm_dat = create_dataset.CustomImageDataset(ewm_annot,ewm_img_dir)
+annot = '/annot_dir'
+img_dir = '/img_dir'
+dat = create_dataset.CustomImageDataset(annot,img_dir)
 
 
 validation_split = .2
 shuffle_dataset = True
 random_seed= 42
 # Creating data indices for training and validation splits:
-dataset_size = 1000
-#dataset_size = len(ewm_dat)
+dataset_size = len(dat)
 indices = list(range(dataset_size))
 split = int(np.floor(validation_split * dataset_size))
 if shuffle_dataset :
@@ -72,9 +71,9 @@ train_indices, val_indices = indices[split:], indices[:split]
 train_sampler = SubsetRandomSampler(train_indices)
 valid_sampler = SubsetRandomSampler(val_indices)
 
-train_loader = DataLoader(ewm_dat, batch_size=batch_size, 
+train_loader = DataLoader(dat, batch_size=batch_size, 
                                            sampler=train_sampler)
-test_loader = DataLoader(ewm_dat, batch_size=batch_size,
+valid_loader = DataLoader(dat, batch_size=batch_size,
                                                 sampler=valid_sampler)
 
 
