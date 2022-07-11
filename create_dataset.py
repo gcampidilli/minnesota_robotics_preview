@@ -23,14 +23,6 @@ class CustomImageDataset(Dataset):
 
     def __len__(self):
         return len(self.img_labels)
-    """
-    def verify_img(self, img_file):
-        try:
-            img = io.imread(img_file)
-        except:
-            return False
-        return True
-    """
 
     def __getitem__(self, idx):
         label = self.img_labels.iloc[idx, 1]
