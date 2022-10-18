@@ -2,13 +2,13 @@ import os
 from pickle import TRUE
 import pandas as pd
 import torch
-from torchvision.io import read_image
 from torch.utils.data import Dataset
+from torchvision.io import read_image
 from torchvision import transforms, utils, datasets
 import matplotlib.pyplot as plt
 import numpy as np
 from torch.utils.data import Dataset, DataLoader
-from skimage import io
+# from skimage import io
 import cv2
 import numpy as np
 from PIL import Image
@@ -23,6 +23,15 @@ class CustomImageDataset(Dataset):
 
     def __len__(self):
         return len(self.img_labels)
+    """
+    use this code if you suspect there might be corrupt data 
+    def verify_img(self, img_file):
+        try:
+            img = io.imread(img_file)
+        except:
+            return False
+        return True
+    """
 
     def __getitem__(self, idx):
         label = self.img_labels.iloc[idx, 1]
