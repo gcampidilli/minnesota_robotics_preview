@@ -11,7 +11,7 @@ Image_cropping.py
 create_dataset.py
 - Scales and crops images to the same size, then creates a dataset of image tensors and labels
 
-ewm_vae.py
-- Applies Variational Autoencoder algorithm to dataset produced by create_dataset.py to generate synthetic images
+ewm_conv_vae.py
+- Applies convolutional Variational Autoencoder algorithm to dataset produced by create_dataset.py to generate synthetic images
 
 
