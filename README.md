@@ -1,5 +1,5 @@
 # Minnesota Robotics Institute Preview
-A portion of the scripts I have developed for my work with the Minnesota Robotics Institute and Interactive Robotics and Computer Vision Lab. My project focuses on enabling robots to identify Eurasian Watermilfoil, an invasive species in Minnesota lakes.
+A sample of the scripts I have developed for my work with the Minnesota Robotics Institute and Interactive Robotics and Computer Vision Lab. My project focuses on enabling robots to identify Eurasian Watermilfoil, an invasive species in Minnesota lakes.
 
 Image data not included in this repo. 
 
